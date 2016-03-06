@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!--配置数据库所使用的基本信息-->
+        <property name="connection.username">root</property>
+        <property name="connection.password">abc123##</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/spring</property>
+
+        <!--配置hibernate所使用的数据库方言-->
+        <property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+
+        <!--执行操作时，是否在控制台打印SQL-->
+        <property name="show_sql">true</property>
+
+        <!--是否对sql格式化-->
+        <property name="format_sql">true</property>
+
+        <!--指定自动生成数据表的策略-->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!--指定关联的.hbm.xml文件-->
+        <mapping resource="org/ahhn/com/helloworld/Books.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
